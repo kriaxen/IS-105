@@ -30,6 +30,13 @@ gruppe = {  'student1': 'Nadia', \
 #    (./
 #     '` 
 def ascii_fugl():
+
+	print "       \/_"
+	print "  \,   /( ,/"
+	print "   \\\' ///"
+	print "    \_ /_/"
+	print "    (./"
+	print "     '"	
 	pass
 
 # 
@@ -46,7 +53,7 @@ def bitAnd(x, y):
 #    bitAnd - x&y
 #    Eksempel: bitAnd(6, 5) = 4
 #
-def bitAnd(x, y):
+def bitOr(x, y):
   return 2
 
 #
@@ -96,8 +103,9 @@ def ascii8Bin(bokstav):
 #
 def transferBin(string): 
 	l = list(string)
-	for c in l:
-		# skriv ut den binære representasjon av hvert tegn (bruk ascii8Bin funksjonen din)
+	#for c in l:
+
+# skriv ut den binære representasjon av hvert tegn (bruk ascii8Bin funksjonen din)
 
 #
 #  Oppgave 8
@@ -106,12 +114,14 @@ def transferBin(string):
 #					Skriv gjerne en støttefunksjon ascii2Hex, som representerer et tegn
 #					med 2 heksadesimale tegn
 #  
+
+
 def transferHex(string):
 	pass
 		
 
 
 
-
+ascii_fugl()
 		
 
