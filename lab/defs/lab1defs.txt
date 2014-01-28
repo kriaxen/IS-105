@@ -1,0 +1,10 @@
+mkdir = new directory
+cd = Change directory
+ls = List non-hidden files
+ls -l = List non-hidden files with details
+ls -la = List all files with details
+pwd = Print wokring directory
+forklar "pipes and redirection" = Pip sends result of command to another command. Redirect writes the output to the receiver
+grep = Search inside files
+cat = Print all content off files
+less = Program that shows content of file (page by page)
