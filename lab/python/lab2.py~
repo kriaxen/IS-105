@@ -10,9 +10,15 @@
 import sys
 
 # Skriv inn fullt navn på gruppemedlemene (erstatte '-' med navn slikt 'Kari Trå')
+<<<<<<< HEAD
 gruppe = {  'student1': '-', \
-			'student2': 'Kristian', \
+	    'student2': 'Kristian', \
+
+=======
+gruppe = {  'student1': 'Nadia', \
+			'student2': '-', \
             'student3': '-', \
+>>>>>>> f5b0b2a4058362bc7c4eb7bd4ebc0981b18602fb
 }
 
 #
