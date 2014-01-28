@@ -54,9 +54,9 @@ def bitAnd(x, y):
 #    Eksempel: bitAnd(6, 5) = 4
 #
 def bitOr(x, y):
-  return x
+  return x|y
 
-#
+#|
 #  Oppgave 4
 #    bitXor - x^y
 #    Eksempel: bitXor(4, 5) = 1
