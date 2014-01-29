@@ -62,15 +62,14 @@ def bitOr(x, y):
 #    Eksempel: bitXor(4, 5) = 1
 #
 def bitXor(x, y):
-  return 2
+  return x^y
 
 #
 #  Oppgave 5
 #    bitOr - x|y
 #    Eksempel: bitOr(0, 1) = 1
 #
-def bitOr(x, y):
-  return 2
+
 
 #
 #  Oppgave 6
@@ -91,7 +90,9 @@ def bitOr(x, y):
 #      08 formatterer tall til 8 tegn og fuller med nuller til venstre hvis nødvendig
 #      b konverterer tallet til dets binære representasjon
 def ascii8Bin(bokstav):
-	return 2
+ asciiNumber = ord(bokstav)
+ return '{0:08b}'.format(asciiNumber)
+
 
 # 
 #  Oppgave 7
@@ -103,8 +104,11 @@ def ascii8Bin(bokstav):
 #
 def transferBin(string): 
 	l = list(string)
-	#for c in l:
+	for c in l:
+	 print ascii8Bin(c)
 
+         
+         
 # skriv ut den binære representasjon av hvert tegn (bruk ascii8Bin funksjonen din)
 
 #
@@ -114,14 +118,20 @@ def transferBin(string):
 #					Skriv gjerne en støttefunksjon ascii2Hex, som representerer et tegn
 #					med 2 heksadesimale tegn
 #  
-
+def ascii2Hex(bokstav):
+ asciiNumber = ord(bokstav)
+ return '{0:02x}'.format(asciiNumber)
 
 def transferHex(string):
-	pass
+ 	l = list(string)
+	for c in l:
+	 print ascii2Hex(c)
+
+	
 		
 
 
 
-print bitAnd(6, 5)
+print transferHex("Hello")
 		
 
