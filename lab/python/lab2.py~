@@ -35,7 +35,6 @@ def ascii_fugl():
 	print "  \,   /( ,/"
 	print "   \\\' ///"
 	print "    \_ /_/"
-	print "       \/_"
 	print "    (./"
 	print "     '"	
 	pass
@@ -47,7 +46,7 @@ def ascii_fugl():
 #    Eksempel: bitAnd(6, 5) = 4
 #
 def bitAnd(x, y):
-  return 2
+  return x&y
 
 # 
 #  Oppgave 3
@@ -123,6 +122,6 @@ def transferHex(string):
 
 
 
-ascii_fugl()
+print bitAnd(6, 5)
 		
 

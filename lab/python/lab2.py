@@ -46,7 +46,7 @@ def ascii_fugl():
 #    Eksempel: bitAnd(6, 5) = 4
 #
 def bitAnd(x, y):
-  return 2
+  return x&y
 
 # 
 #  Oppgave 3
@@ -54,7 +54,7 @@ def bitAnd(x, y):
 #    Eksempel: bitAnd(6, 5) = 4
 #
 def bitOr(x, y):
-  return 2
+  return x
 
 #
 #  Oppgave 4
@@ -122,6 +122,6 @@ def transferHex(string):
 
 
 
-ascii_fugl()
+print bitAnd(6, 5)
 		
 
