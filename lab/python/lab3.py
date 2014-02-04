@@ -13,9 +13,8 @@ import subprocess
 import re
 
 # Skriv inn fullt navn på gruppemedlemene (erstatte '-' med navn slikt 'Kari Trå')
-gruppe = {  'student1': '-', \
-			'student2': '-', \
-            'student3': '-', \
+gruppe = {  'student1': 'Nadia', \
+			'student2': 'Kristian', \
 }
 
 #
@@ -35,8 +34,11 @@ gruppe = {  'student1': '-', \
 #      3 c
 #
 # Din funksjonsimplementering skrives her ...
+def lab3_scripts():
 
-
+	subprocess.call([test1.sh])
+	subprocess.call([test1.pl])
+	subprocess.call([test1.py])
 
 #
 #  Oppgave 2
@@ -57,6 +59,31 @@ def min_sys_info():
 	print "os bruker: " + os.getlogin()
 
 
+#####Resultat av min_sys_info()
+#byteorder: little
+#os data: 
+#('Linux', 'localhost.localdomain', '2.6.32-358.0.1.el6.i686', '#1 SMP Wed Feb 27 03:24:34 UTC 2013', 'i686')
+#os bruker: centos
+#----- Studenter: -----
+#Kristian
+#Nadia
+#----- mysysinfo() -----
+#
+#	Her er mitt resultat av kjøringen av denne funksjonen:
+#   
+#	
+#byteorder: little
+#os data: 
+#('Linux', 'localhost.localdomain', '2.6.32-358.0.1.el6.i686', '#1 SMP Wed Feb 27 03:24:34 UTC 2013', 'i686')
+#os bruker: centos
+#----- initialer() -----
+#2
+#----- infix_to_prefix() -----
+#2
+#----- lab3_scripts() -----
+
+
+
 #
 #  Oppgave 3
 #    Jobbe med symboler (bokstaver og tall)
@@ -73,7 +100,11 @@ def min_sys_info():
 #    Anta at inn-data er korrekt (ingen testing nødvendig)
 #
 def initialer(navn):
-	return 2
+	 
+	#navn[0:1]
+	#navn.string(" ")	
+	return navn[0:1] + "." + navn[navn.find(" ")+1:navn.find(" ")+2] + "."  
+
 
 #
 #  Oppgave 4
@@ -95,7 +126,11 @@ def initialer(navn):
 #    operander (to tall) og en operatør (+, for eksempel).
 #
 def infix_to_prefix(infix):
-	return 2
+	
+	operands = re.findall(r"[0-9]",infix)
+	operators = re.findall(r"[+*\-\/]",infix)
+	
+	return operators[0] + " " + operands[0] + " " + operands[1]
 
 
 # Kaller opp implementerte funksjoner (pseudo-testing)
