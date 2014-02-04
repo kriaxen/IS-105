@@ -1,0 +1,32 @@
+lambda = En annen måte at definere en funksjon ex. multiplyBy2 = lambda x: x*2
+
+if - else = Logisk funktsjon, hvis sant gjør det ellers gjør det
+
+or = Operator hvis x eller y er sant gjør det
+
+and = Operator hvis x og y sant gjør det
+
+not = hvis x ikke er sant gjør det
+
+in, not in, is, is not, <, <=, >, >=, <>, !=, == Sammelignings operatorer.
+
+| = Sammenlegning av bit (Bitwise OR)
+
+^ = Sammenlegning av bit (Bitwise XOR)
+
+& = Sammenlegning av bit (Bitwise AND)
+
+<<, >> = Flytning av bits (Shift)
+
++, - = Plus og minus av tal
+
+*, /, // , % = Gange, division, division med avrundning, "Remainder"
+
++x, -x, ~x = Postivivt, Negativt , Bitwise Not
+
+** = x opløftet i y
+
+x[index], x[index:index], x(arguments...), x.attribute = Subscription, slicing, call, attribute reference
+
+(expressions...), [expressions...], {key: value...}, `expressions...` = Binding or tuple display, list display, dictionary display, string conversion
+
