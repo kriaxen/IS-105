@@ -36,9 +36,9 @@ gruppe = {  'student1': 'Nadia', \
 # Din funksjonsimplementering skrives her ...
 def lab3_scripts():
 
-	subprocess.call([test1.sh])
-	subprocess.call([test1.pl])
-	subprocess.call([test1.py])
+	subprocess.call(["../scripts/test1.sh"])
+	subprocess.call(["../scripts/test1.pl"])
+	subprocess.call(["../scripts/test1.py"])
 
 #
 #  Oppgave 2
@@ -103,7 +103,7 @@ def initialer(navn):
 	 
 	#navn[0:1]
 	#navn.string(" ")	
-	return navn[0:1] + "." + navn[navn.find(" ")+1:navn.find(" ")+2] + "."  
+	return navn[0] + "." + navn[navn.find(" ")+1] + "."  
 
 
 #
@@ -126,8 +126,8 @@ def initialer(navn):
 #    operander (to tall) og en operatør (+, for eksempel).
 #
 def infix_to_prefix(infix):
-	
-	operands = re.findall(r"[0-9]",infix)
+	 
+	operands = re.findall(r"[0-9]+",infix)
 	operators = re.findall(r"[+*\-\/]",infix)
 	
 	return operators[0] + " " + operands[0] + " " + operands[1]
@@ -152,6 +152,6 @@ print infix_to_prefix("2/3")
 
 # Kalle opp din lab3_scripts() funksjon her
 print 5*"-" + " lab3_scripts() " + 5*"-"
-
+lab3_scripts()
 
 
