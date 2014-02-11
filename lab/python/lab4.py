@@ -11,12 +11,13 @@ import sys
 import os
 import subprocess
 import re
-import psutil # Kan installeres med "pip2.7 install psutil"
+import psutil 
+# Kan installeres med "pip2.7 install psutil"
 
 # Skriv inn fullt navn på gruppemedlemene (erstatte '-' med navn slikt 'Kari Trå')
-gruppe = {  'student1': '-', \
-			'student2': '-', \
-            'student3': '-', \
+gruppe = {  'student1': 'Nadia', \
+			'student2': 'Kristian', \
+
 }
 
 # Oppgave 1
@@ -40,6 +41,14 @@ def psutils_use():
 	Henter lister med systeminformasjon fra /proc og bearbeider disse
 	"""
 	# Impleementer funksjonen her
+	cpu_times = psutil.cpu_times()
+	
+	cpu_times_fields = cpu_times._fields
+	
+
+
+	for a in cpu_times_fields:
+		print a, "=", getattr(cpu_times,a)	
 
 	
 psutils_use()
@@ -61,8 +70,12 @@ psutils_use()
 #			
 def print_history(proglangs):
 	# Implementer funksjonen her
+	sorted_proglangs = sorted(proglangs, key=lambda year:year[0])
+	for a, b, c in sorted_proglangs:
+		print a, "ble startet", b, "av", c
 
-proglangs = [('Python', '1989', 'Guido van Rossum'), ('C', '1969', 'Dennis Ritchie'), ('Java/Oak', '1991', 'James Gosling'), ('C++', '1979', 'Bjarne Stroustrup'), ('Ruby', '1991', 'Yukihiro "Matz" Matsumoto'), ('Perl', '1987' , 'Larry Wall'), ('Go/golang', '2007', 'Robert Griesemer, Rob Pike, and Ken Thompson')]
+
+proglangs = [('Python', '1989', 'Guido van Rossum'), ('C', '1969', 'Dennis Ritchie'), ('Java/Oak', '1991', 'James Gosling'), ('C++', '1979', 'Bjarne Stroustrup'), ('Ruby', '1991', 'Yukihiro "Matz" Matsumoto'), ('Perl', '1987' , 'Larry Wall'), ('Go/golang','2007', 'Robert Griesemer, Rob Pike, and Ken Thompson')]
 print_history(proglangs)
 
 
