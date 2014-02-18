@@ -10,9 +10,8 @@
 
 
 # Skriv inn fullt navn på gruppemedlemene (erstatte '-' med navn slikt 'Kari Trå')
-gruppe = {  'student1': '-', \
-			'student2': '-', \
-            'student3': '-', \
+gruppe = {  'student1': 'Kristian', \
+			'student2': 'Nadia', \
 }
 
 # Oppgave 
@@ -79,6 +78,23 @@ def hand_rank(hand):
 # Verdier for J, Q, K og A er tilsvarende 11, 12, 13, 14. 
 # En hånd TD TC TH 7C 7D skal returnere [10,10,10,7,7]
 def card_ranks(hand):
+	
+	list_to_return = []
+	for a in hand:
+		if a[0] == "A":
+			list_to_return.append(14)
+		elif a[0] == "K":
+			list_to_return.append(13)
+		elif a[0] == "Q":
+			list_to_return.append(12)
+		elif a[0] == "J":
+			list_to_return.append(11)
+		elif a[0] == "T":
+			list_to_return.append(10)
+		else:
+			list_to_return.append(int(a[0]))
+	return list_to_return
+	
 	# Oppgave 4: implementer funksjonen her og legg til testtilfeller i funksjonen test()
 	return None
 
@@ -111,19 +127,25 @@ def test():
 	# Eksemplene er gitt, du må kommentere disse ut og sette på en verdi som ikke gir feil
 	lon1 = [6, 7, 8, 0]
 	lon2 = [6, 7, -9, 0]
-	#assert max(lov1) == 
-	#assert max(lov2, key=abs) == 
+
+	assert max(lon1) == 8
+	assert max(lon2, key=abs) ==  -9
 
 	sf = "6C 7C 8C 9C TC".split() # Straight Flush => ['6C', '7C', '8C', '9C', 'TC']
 	fk = "9D 9H 9S 9C 7D".split() # Four of a Kind
 	fh = "TD TC TH 7C 7D".split() # Full House
-	assert poker([sf, fk, fh]) == sf
+	st = "9S 8B 7S 6H 5C".split() # //Straight
+	tp = "KS KS 9H 9H JH".split() # //Two Pair
+	#assert poker([sf, fk, fh]) == sf
 	# Oppgave 2 
 	# Skriv tre nye testtilfeller som sammenligner hender basert på eksemplet overfor
 	# 1) Four of Kind (fk) mot Full House (fh) skal returnere Four of Kind (fk)
 	# 2) Full House (fh) mot Full House (fh) skal returnere Full House (fh)
 	# 3) Straight (st) skal slå Two pair (tp) OBS! Du må selv lage eksempler på hender her
-	
+
+	#assert poker([fh,fk]) == fk
+	#assert poker([fh,fh]) == fh
+	#assert poker([st,tp]) == st
 
 	# Oppgave 3
 	# Skriv 2 nye testtilfeller:
@@ -132,16 +154,30 @@ def test():
 	# og det må da returnere Straight Flush (urealistisk med så mange spillere, men 
 	# vi tar høyde for det).
 	# Hva skjer hvis man har en tom liste som inn-data, dvs. ingen hender?
+	#assert poker([fk]) == fk
 	
+	list_of_hands = [sf]
+	x = 0
+	while x < 100:
+		
+		list_of_hands.append(fh)
+
+		x = x + 1
+
+	
+
+
+	#assert poker(list_of_hands) == sf
+
 
 	# Oppgave 4
 	# Implementer funksjonen card_rank(hand) og legg til tester for 
 	# sf, fk og fh variabler som er definert i denne testfunksjonen
 	# Du kan gjerne definere flere hender og legge til flere tester :)
-
+	assert card_ranks(["AH","KH","QH","JH","TH"]) == [14,13,12,11,10]
 
     # 
-    # Funksjonen hard_rank er ennå ikke implementert
+    # Funksjonen hand_rank er ennå ikke implementert
 	# Her er gitt noen eksempler på testing av denne funksjonen som man kan bruke på et senere tidspunkt
     #
 	#assert hand_rank(sf) == (8,10)
@@ -150,5 +186,6 @@ def test():
 	return "Done testing"
 
 print test()
+
 
 
