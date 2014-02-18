@@ -70,7 +70,7 @@ psutils_use()
 #			
 def print_history(proglangs):
 	# Implementer funksjonen her
-	sorted_proglangs = sorted(proglangs, key=lambda year:year[0])
+	sorted_proglangs = sorted(proglangs, key=lambda year:year[1])
 	for a, b, c in sorted_proglangs:
 		print a, "ble startet", b, "av", c
 
