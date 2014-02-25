@@ -1,0 +1,9 @@
+API = Application programming interface - Interface that allows developers to use functionality of another program.
+IDE = Integrated Development environmont - Program to develop software in
+ps = Show current processes
+top = Function that display linux tasks running 
+df = Report filesystem disk usage
+kill = Terminate a process
+netstat = Print statistics of the network 
+ifconfig = Allows you to configure the network
+who = Show who is logged on

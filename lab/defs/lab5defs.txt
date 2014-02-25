@@ -1,0 +1,6 @@
+python <filnavn>.py
+javac <filnavn>.java
+java <filnavn>.class
+gcc -o <filnavn>.c
+sleep 100 & (utført fr kommandolinje)
+cat /proc/cpuinfo
