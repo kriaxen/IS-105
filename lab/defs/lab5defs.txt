@@ -1,6 +1,6 @@
-python <filnavn>.py
-javac <filnavn>.java
-java <filnavn>.class
-gcc -o <filnavn>.c
-sleep 100 & (utført fr kommandolinje)
-cat /proc/cpuinfo
+python <filnavn>.py = Kjører en python fil
+javac <filnavn>.java = Kompilere java fil
+java <filnavn>.class = Kjører en java klasse fil
+gcc -o <filnavn>.c = Gnu Compiler Collection, skriver en ny objekt fil utfra c (executable fil)
+sleep 100 & (utført fr kommandolinje) = Setter en process til at sove
+cat /proc/cpuinfo = Utskriver info om cpu processoren
