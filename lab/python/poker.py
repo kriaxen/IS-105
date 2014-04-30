@@ -249,10 +249,7 @@ def test():
 	
 	return "Done testing"
 
-print test()
-hands = deal(3)
-print hands
-print poker(hands)
+
 
 
 

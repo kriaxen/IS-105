@@ -24,7 +24,21 @@ import poker
 # Dette bør skje på forespørsel fra en klient i neste versjon av programmet
 hands = poker.deal(3)
 handsdelt = 0 # Vi trenger en variabel som holder styr på hvor mange hender er delt ut
+size = 3
+bord = []
 
+
+def isOnBord(s):
+	print s
+	for x in bord:
+		if x == s.getpeername():
+			print x
+	
+	
+			return True
+	return False
+	
+	
 # Lage en TCP/IP socket
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setblocking(0)
@@ -109,9 +123,31 @@ while inputs:
 				# Her må du tenke på en algoritme som klarer å begrense antall klienter som kan spille
 				# og hvor du også må finne en måte å dele ut kort på til hver av spillere
 				# hands er her laget ved start av server, men finn også ut 
-				if data == 'JOIN\n':
-					data = ' '.join(str(x) for x in hands[0])
+				
+									
 
+				if data == 'JOIN\n':
+					if not isOnBord(s):
+						if len(bord) < size:
+							bord.append(s.getpeername())
+							#data = "Du er på bordet"
+
+							data = "Du er på bordet"
+							
+						else:
+							data = "Ikke plads"
+						#data =  ' '.join(str(x) for x in hands[0])
+					else:
+						data = "Du ER på bordet"
+				
+				elif data == 'DEAL\n':
+					if len(bord) < size:
+						data = "Der skal minimum være 3 på bordet"
+					else:
+						play = dict(zip(bord,hands))			
+						data =  ' '.join(str(x) for x in play[s.getpeername()])
+				else:
+					data = "Forstår ikke beskeden"
 
 				message_queues[s].put(data)
 				
